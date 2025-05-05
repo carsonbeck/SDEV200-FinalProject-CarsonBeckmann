@@ -14,8 +14,13 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/sdev200finalprojectcarsonbeckmann/main.fxml"));
-        stage.setScene(new Scene(root, 400, 200));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("main.fxml"));
+
+        //Parent root = FXMLLoader.load(getClass().getResource("/org/example/sdev200finalprojectcarsonbeckmann/main.fxml"));
+        ///stage.setScene(new Scene(root, 400, 200));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+
+        stage.setScene(scene);
         stage.setTitle("Currency Converter");
         stage.show();
     }
